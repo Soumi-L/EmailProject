@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for HTML user with inline image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<p>
+    <span th:text=" Bonjour "></span>
+    <span th:if="${user.getGender()=='Femme'}">Madame</span>
+    <span th:if="${user.getGender()=='Homme'}">Monsieur</span>
+    <b><span th:text=" ${user.name}"></span></b>
+</p>
+
+
+<p th:if="${user.name.length() > 10}">
+    Wow! You've got a long name (more than 10 chars)!
+</p>
+<p>
+    You can find <b>your inlined image</b> just below this text.
+</p>
+
+<p>
+
+</p>
+<a href="https://mytechdecisions.com/wp-content/uploads/2020/04/AdobeStock_204077439-1000x500.jpg">
+    <button>Click me</button>
+</a>
+<p>
+    Regards, <br/>
+    <em>The Thymeleaf Teams</em>
+</p>
+
+<div th:if="${showHeader}">
+    <p>TRUE</p>
+</div>
+</body>
+<footer>
+    <p th:text="${user.getSubject()}">
+
+    </p>
+</footer>
+</html>
